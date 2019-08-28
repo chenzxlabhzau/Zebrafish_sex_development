@@ -59,7 +59,7 @@ library(pheatmap)
 pheatmap(log2.norm.counts,cluster_rows = TRUE,show_rownames = FALSE,cluster_cols = TRUE,annotation_col = df)
 bk <- c(seq(-9,-0.1,by=0.01),seq(0,9,by=0.01))
 a = pheatmap(cor(resdata,method = "spearman"),display_numbers = TRUE,number_color = "black",
-             color = c(colorRampPalette(colors = c("pink","white"))(length(bk)/2),colorRampPalette(colors = c("white","red"))(length(bk)/2)))
+             color = c(colorRampPalette(colors = c("yellow","pink"))(length(bk)/2),colorRampPalette(colors = c("pink","red"))(length(bk)/2)))
 
 #PCA
 library(pheatmap)
