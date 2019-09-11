@@ -13,7 +13,7 @@ condition<-factor(c("big","big","big","small","small","small","big","big","big",
 name<-c(colnames(gonad))
 time=factor(c("20","20","20","20","20","20","25","25","25","25","25","25","30","30","30","30","30","30"))
 
-dds <- DESeqDataSetFromMatrix(gonad,DataFrame(condition,time), design= ~ condition+time)
+dds <- DESeqDataSetFromMatrix(gonad,DataFrame(condition,time), design= ~time + condition + time:condition)
 dds <- DESeq(dds)
 
 resdata <- as.data.frame(counts(dds, normalized=TRUE))
